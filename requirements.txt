@@ -23,7 +23,7 @@ MarkupSafe==1.1.1
 more-itertools==7.2.0
 numpy==1.16.2
 pep517==0.7.0
-Pillow==5.4.1
+Pillow==6.2.0
 pygame==1.9.6
 Pygments==2.4.2
 PyQt5==5.13.0
