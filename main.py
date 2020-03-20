@@ -77,6 +77,7 @@ def main():
     api.add_resource(users_resource.UsersResource, '/api/v2/users/<int:user_id>')
     api.add_resource(jobs_resource.JobsListResource, '/api/v2/jobs')
     api.add_resource(jobs_resource.JobsResource, '/api/v2/jobs/<int:job_id>')
+    api.add_resource(users_resource.DBResource, '/api/v2/db')
 
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)

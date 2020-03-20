@@ -4,6 +4,8 @@ from data import db_session
 from data.users import User
 from data.Jobs import Jobs
 
+import os
+
 list_of_parameters_users = ['name', 'surname', 'age',
                                     'id', 'position', 'speciality',
                                     'address', 'email', 'modified_date']
@@ -88,6 +90,16 @@ class UsersListResource(Resource):
         session.add(user)
         session.commit()
         return jsonify({'success': 'OK'})
+
+
+class DBResource(Resource):
+    def get(self):
+        session = db_session.create_session()
+        users = session.query(User).all()
+        jobs = session.query(Jobs).all()
+
+        return jsonify({ 'db':{'users': [user.to_dict() for user in users],
+                               'jobs': [job.to_dict() for job in jobs]}})
 
 
 def abort_if_user_not_found(user_id):
