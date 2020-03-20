@@ -16,7 +16,7 @@ def pars_str_to_date(date_str):
 
 
 way = 'https://colonization-mars.herokuapp.com/'
-db_session.global_init("db/mars_explorer.sqlite2")
+db_session.global_init("db/mars_explorer.sqlite")
 session = db_session.create_session()
 
 
